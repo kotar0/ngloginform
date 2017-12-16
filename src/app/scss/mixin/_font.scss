@@ -1,0 +1,40 @@
+@mixin generateChar($size, $color, $lang, $fw){
+    font-size: $size;
+    color: $color;
+    @if $lang == "en"{
+        font-family: 'Montserrat', sans-serif;
+    } @else if $lang == "ja"{
+        font-family: "Hiragino Sans","Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    font-weight: $fw;
+}
+
+
+
+@mixin char__pagetitle(){
+    @include generateChar( 4.7rem, #000, "ja", 800);
+}
+
+@mixin char__formlabel(){
+    @include generateChar( 1.6rem, #000, "ja", 600);
+}
+
+@mixin char__formContents(){
+    @include generateChar( 1.6rem, #000, "en", 600);
+}
+
+@mixin char__formContents__error(){
+    @include generateChar( 1.2rem, #F83838, "ja", 600);
+}
+
+@mixin char__btnlabel(){
+    @include generateChar( 2.0rem, #fff, "ja", 600);
+}
+
+@mixin char__link(){
+    @include generateChar( 1.6rem, #2986F1, "ja", 600);
+    text-decoration: underline;
+    &:hover{
+        opacity: 0.6;
+    }
+}

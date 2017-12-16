@@ -1,0 +1,89 @@
+@import "../scss/mixin";
+
+.titleContainer{
+    margin-bottom: 50px;
+}
+
+.title{
+    @include char__pagetitle;
+    display: inline;
+    line-height: 0;
+}
+
+.titleside{
+    @include char__formlabel;
+    margin-left: 19px;    
+}
+
+.titleside__link{
+    @include char__link;
+    margin-left: 16px;
+}
+
+.formItem{
+    color: #000;    
+}
+
+
+.formlabelContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 11px;
+    color: inherit;
+}
+
+
+.form__input{
+    @include char__formContents;
+    width: 498px;
+    height: 50px;
+    padding-left: 16px;
+    box-sizing: border-box;
+    margin-bottom: 36px;
+    border-radius: 7px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 9px 0 rgba(232, 232, 232, 0.5);
+    border: solid 1px #e5e5e5;
+}
+
+
+.formItem.alert{
+    color: #F83838;
+}
+
+.formItem.alert .form__input{
+    background: #FFF5F5;
+    border: 1px solid #FF7C7C;
+    box-shadow: 0 3px 9px 0 rgba(255,205,205,0.50);
+}
+
+
+.formlabel{
+    @include char__formlabel;
+    display: inline-block;
+    color: inherit;
+}
+
+.errorMsgs{
+    @include char__formContents__error;
+    color: inherit;    
+}
+
+
+
+
+.btn__submit{
+    @include char__btnlabel;
+    width: 498px;
+    height: 55px;
+    border-radius: 7px;
+    background-color: #61bd4f;
+    box-shadow: 0 3px 10px 0 rgba(142, 194, 132, 0.49);
+
+    &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.3s ease-in-out;
+    }
+}

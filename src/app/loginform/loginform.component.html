@@ -1,0 +1,43 @@
+<div class="form-area">
+    <div class="titleContainer">
+        <h2 class="title">ログイン</h2><span class="titleside">or</span><a href="#" class="titleside__link">サインアップ</a>
+    </div>
+    <form #myForm="ngForm" (ngSubmit)="show()"   action="">
+        <div class="formItem alert" [class.alert]="mail.errors">
+            <div class="formlabelContainer">
+                <label class="formlabel" for="mail">メールアドレス</label><br>
+                <div class="errorMsgs">
+                    <span *ngIf="mail.errors?.required && mail.dirty" >
+                            メールアドレスは必須です。
+                    </span>
+                    <span *ngIf="mail.errors?.email" >
+                        正しい形式で入力してください。
+                    </span>
+                </div>                        
+            </div>
+            <input class="form__input" id="mail" name="mail" type="email"
+                [(ngModel)]=user.mail #mail="ngModel" required email />
+        </div>
+        <div class="formItem" [class.alert]="passwd.errors && passwd.dirty">
+            <div class="formlabelContainer">
+                <label class="formlabel" for="passwd">パスワード</label>
+                <div class="errorMsgs">
+                    <span *ngIf="passwd.errors?.required && passwd.dirty" >
+                            パスワードは必須です。
+                    </span>
+                    <span *ngIf="passwd.errors?.minlength" >
+                        パスワードは6文字以上で入力してください。
+                    </span>
+                </div>
+            </div>
+            <input class="form__input" id="passwd" name="passwd" type="password"
+                [(ngModel)]=user.passwd required minlength="6" #passwd="ngModel" />
+
+            
+        </div>
+        <div>
+            <input class="btn__submit" type="submit" value="ログイン"
+            [disabled]="myForm.invalid" >
+        </div>
+    </form>
+</div>

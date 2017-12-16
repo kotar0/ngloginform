@@ -20,7 +20,6 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
 }
@@ -47,3 +46,20 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+html,body{
+    font-size:62.5%;        
+    font-family: 'Montserrat', sans-serif;
+}
+
+input, button, textarea, select {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
