@@ -78,12 +78,20 @@
     width: 498px;
     height: 55px;
     border-radius: 7px;
-    background-color: #61bd4f;
+    background-color: rgb(97, 189, 79);
     box-shadow: 0 3px 10px 0 rgba(142, 194, 132, 0.49);
+    transition: background-color 600ms;
 
     &:hover{
         cursor: pointer;
         opacity: 0.8;
         transition: opacity 0.3s ease-in-out;
     }
+
+    &[disabled]{
+        background-color: rgba(185, 185, 185, 0.49);
+    box-shadow: 0 3px 10px 0 rgba(185, 185, 185, 0.49);
+    
+    }
+
 }

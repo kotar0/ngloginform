@@ -1,9 +1,9 @@
-<div class="form-area">
-    <div class="titleContainer">
-        <h2 class="title">ログイン</h2><span class="titleside">or</span><a href="#" class="titleside__link">サインアップ</a>
+<div class="form-area" [@enterAnimation]="3">
+    <div class="titleContainer animeElm">
+        <h2 class="title">{{ pagedata.page }}</h2><span class="titleside">or</span><a [routerLink]="['/signup']" class="titleside__link">サインアップ</a>
     </div>
-    <form #myForm="ngForm" (ngSubmit)="show()"   action="">
-        <div class="formItem alert" [class.alert]="mail.errors">
+    <form #myForm="ngForm" (ngSubmit)="post()"   action="">
+        <div class="formItem alert animeElm" [class.alert]="mail.errors">
             <div class="formlabelContainer">
                 <label class="formlabel" for="mail">メールアドレス</label><br>
                 <div class="errorMsgs">
@@ -18,7 +18,7 @@
             <input class="form__input" id="mail" name="mail" type="email"
                 [(ngModel)]=user.mail #mail="ngModel" required email />
         </div>
-        <div class="formItem" [class.alert]="passwd.errors && passwd.dirty">
+        <div class="formItem animeElm" [class.alert]="passwd.errors && passwd.dirty">
             <div class="formlabelContainer">
                 <label class="formlabel" for="passwd">パスワード</label>
                 <div class="errorMsgs">
@@ -35,7 +35,7 @@
 
             
         </div>
-        <div>
+        <div class="animeElm">
             <input class="btn__submit" type="submit" value="ログイン"
             [disabled]="myForm.invalid" >
         </div>
